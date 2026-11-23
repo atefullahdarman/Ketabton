@@ -1,0 +1,12 @@
+EMERALD LIBRARY — سپینې پاڼې د تشخیص نسخه
+
+۱. دغه ZIP په نوي فولډر کې Extract کړه.
+۲. په VS Code Terminal کې npm install اجرا کړه.
+۳. npm run dev اجرا کړه.
+۴. د Vite له پیغام څخه Local URL خلاص کړه، لکه http://localhost:5173/
+۵. که React تېروتنه ولري، سور رنګ Error به په پاڼه کې ښکاره شي. د هغه عکس راولېږه.
+۶. که لا هم پاڼه تشه وي، په Chrome کې F12 → Console ته لاړ شه، Ctrl+Shift+R ووهه، د سور خطا عکس راولېږه.
+۷. د Production لپاره npm run build او npm run preview اجرا کړه.
+
+بدلونونه: startup diagnostic error display, React ErrorBoundary, safe localStorage parsing, lazy dashboard import.
+دا د تشخیص او احتمالي کرش د مخنیوي نسخه ده؛ د خطا له دقیق پیغام پرته د بشپړ حل ضمانت نشته.

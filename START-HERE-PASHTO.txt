@@ -1,0 +1,28 @@
+EMERALD DIGITAL LIBRARY — د شروع کولو لارښود
+=======================================
+
+۱. ZIP فایل Extract کړه.
+۲. فولډر په VS Code کې Open کړه.
+۳. Terminal خلاص کړه.
+۴. لاندې کمانډونه اجرا کړه:
+
+npm install
+npm run dev
+
+۵. بیا دا لینک په Browser کې خلاص کړه:
+http://localhost:5173/
+
+د Production Build لپاره:
+npm run build
+
+د GitHub Pages لپاره:
+- GitHub کې Public Repository جوړ کړه.
+- پروژه git push کړه.
+- په Settings → Pages → Source کې GitHub Actions انتخاب کړه.
+- Workflow به اتومات ویب‌سایټ خپور کړي.
+
+مکمل لارښود په README.md کې دی.
+
+یادونه: د Book Download تڼۍ د Project Gutenberg رسمي پاڼه خلاصوي.
+په هغې پاڼه کې EPUB او نورې موجودې بڼې ډاونلوډ کولی شې.
+GitHub عامه Profile URL لا نه دی ورکړل شوی؛ dashboard لینک عامه پروفایل نه دی.
