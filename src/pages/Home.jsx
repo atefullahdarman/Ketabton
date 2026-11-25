@@ -9,11 +9,13 @@ import {demoBooks} from '../data/demoBooks';
 import {pashtoBooks} from '../data/pashtoBooks';
 import {useLibrary} from '../context/LibraryContext';
 import {formatNumber} from '../lib/books';
+import CopyrightCard from "../components/CopyrightCard";
 const categoryPreview=categories.slice(0,8);
 export default function Home(){
  const {featured,featuredStatus,liveCount,favorites}=useLibrary();
  const heroes=[demoBooks[0],demoBooks[3],demoBooks[1]];
  return <main>
+    <CopyrightCard />
   <section className="hero-section site-container"><div className="hero-shell">
    <div className="hero-copy"><div className="hero-kicker"><span className="kicker-stars">✦</span> THE ART OF READING <span className="kicker-stars">✦</span></div>
     <h1>Where every <em>page</em> begins an adventure<span className="headline-period">.</span></h1>

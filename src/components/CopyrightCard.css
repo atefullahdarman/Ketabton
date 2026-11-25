@@ -1,0 +1,123 @@
+.copyright-card {
+  box-sizing: border-box;
+  width: calc(100% - 32px);
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 28px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(246, 245, 237, 0.96),
+    rgba(222, 239, 230, 0.85)
+  );
+
+  border: 1px solid #c9dcd2;
+  border-radius: 22px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow: 0 12px 35px rgba(23, 76, 67, 0.08);
+
+  animation: copyrightFade 0.7s ease;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.copyright-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(23, 76, 67, 0.14);
+}
+
+.copyright-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.copyright-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+
+  background: #21645b;
+  color: white;
+  border-radius: 16px;
+  font-size: 30px;
+}
+
+.copyright-header h2 {
+  color: #174c43;
+  font-size: 23px;
+  margin: 0 0 5px;
+}
+
+.copyright-header span {
+  color: #52766b;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.copyright-card p {
+  color: #34574c;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 12px;
+}
+
+.copyright-footer {
+  border-top: 1px solid #c9dcd2;
+  padding-top: 15px;
+  margin-top: 20px;
+  color: #21645b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@keyframes copyrightFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+  .copyright-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .copyright-header h2 {
+    font-size: 18px;
+  }
+
+  .copyright-card p {
+    font-size: 13px;
+  }
+
+  .copyright-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copyright-card {
+    animation: none;
+    transition: none;
+  }
+
+  .copyright-card:hover {
+    transform: none;
+  }
+}
