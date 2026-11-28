@@ -1,4 +1,4 @@
-# Emerald Digital Library — 53 Real Pashto Book Records
+# Darman Digital Library — 53 Real Pashto Book Records
 
 **Provenance:** Source-linked metadata curated from publishers/bookstores or their public book-listing pages, with exact source-page URLs below. No publisher books or cover-image bytes are distributed by this project.
 

@@ -1,28 +1,12 @@
-EMERALD DIGITAL LIBRARY — د شروع کولو لارښود
-=======================================
+DARMAN DIGITAL LIBRARY — د چلولو او خپرولو لارښود
 
-۱. ZIP فایل Extract کړه.
-۲. فولډر په VS Code کې Open کړه.
-۳. Terminal خلاص کړه.
-۴. لاندې کمانډونه اجرا کړه:
+۱. ZIP خلاص کړئ او هغه فولډر په VS Code کې خلاص کړئ چې package.json پکې دی.
+۲. Terminal کې npm install، npm run check او npm run dev وچلوئ.
+۳. npm run build او npm run preview سره تولیدي نسخه وازمویئ.
+۴. د موجودې GitHub/Vercel پروژې فایلونه په دې نسخه تازه کړئ، زاړه غیرضروري فایلونه حذف کړئ او د Google Verification فایل یا meta tag وساتئ.
+۵. git add -A، git commit -m "Darman Digital Library SEO update" او git push origin main.
+۶. که مستقیم Vercel CLI کاروئ، د هماغې موجودې پروژې دننه vercel --prod وچلوئ.
+۷. اصلي لینک: https://ketabton.vercel.app/ — نوم بدل شوی، لینک هماغه دی.
+۸. Search Console کې sitemap.xml ثبت کړئ او د اصلي پاڼې Request Indexing یوازې یو ځل وکړئ.
 
-npm install
-npm run dev
-
-۵. بیا دا لینک په Browser کې خلاص کړه:
-http://localhost:5173/
-
-د Production Build لپاره:
-npm run build
-
-د GitHub Pages لپاره:
-- GitHub کې Public Repository جوړ کړه.
-- پروژه git push کړه.
-- په Settings → Pages → Source کې GitHub Actions انتخاب کړه.
-- Workflow به اتومات ویب‌سایټ خپور کړي.
-
-مکمل لارښود په README.md کې دی.
-
-یادونه: د Book Download تڼۍ د Project Gutenberg رسمي پاڼه خلاصوي.
-په هغې پاڼه کې EPUB او نورې موجودې بڼې ډاونلوډ کولی شې.
-GitHub عامه Profile URL لا نه دی ورکړل شوی؛ dashboard لینک عامه پروفایل نه دی.
+یادونه: د کتابونو اصلي سرچینې او د خپرونکو لینکونه نه دي بدل شوي. د Google د پایلو وخت او درجه تضمین نه لري. د جزئیاتو لپاره README.md وګورئ.

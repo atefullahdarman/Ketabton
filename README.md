@@ -1,162 +1,58 @@
-## FINAL UPDATE — ORIGINAL CERTIFICATES (23 Nov 2026)
+# Darman Digital Library
 
-The developer certificates page (`/#/certificates`) and About section (`/#/about#portfolio-certificates`) now show **8 real certificate images from user uploads**, with category search, original-image preview, mobile layout, local downloadable image and source verification links (including two Cisco QR-code verification URLs). The original certificate source data is in `CERTIFICATES-SOURCE-DETAILS.json`. See `CERTIFICATES-UPDATE-PASHTO.md`. No fabricated certificate images are used.
+React + Vite, frontend-only digital library. Premium cream, sage and teal design; English public-domain classics via Gutendex and 53 curated Pashto book records; category browsing, favorites, dashboard, developer portfolio, contact and privacy pages. The existing production origin is **https://ketabton.vercel.app/**. The brand is Darman Digital Library; the URL intentionally remains unchanged to preserve the existing Google indexing history.
 
-# I ♡ Book — Emerald Digital Library
+## Run locally
 
-**Updated real-book edition:** 53 curated Pashto titles, including 23 novels and stories, grouped in six subject groups. Each title has its own details screen, an original-site metadata record and an external cover image. More information in **VERIFIED_BOOK_SOURCES.md**.
-
-A responsive, frontend-only **React + Vite** digital library with a premium cream, sage and emerald visual design. It connects to the Gutendex book metadata API and links readers to the **official Project Gutenberg landing pages** for reading and download options.
-
-## 1. How to run (له صفر څخه)
-
-**Required:** Node.js 20.19+ or 22+, npm, internet access for the first install.
-
-1. Unzip `Emerald_Digital_Library.zip`.
-2. Open the `Emerald_Digital_Library` folder in **VS Code**.
-3. Open Terminal → New Terminal.
-4. Run:
+Use Node.js 22 LTS (or compatible Node 20.19+) and npm. Open this folder, which contains `package.json`, in VS Code. Run:
 
 ```powershell
 npm install
+npm run check
 npm run dev
 ```
 
-5. Open **http://localhost:5173/** in your browser.
-
-**Build and preview:**
+Open the URL printed by Vite. Production test:
 
 ```powershell
 npm run build
 npm run preview
 ```
 
-Vite writes the production website to `dist/`.
+On Windows, use `npm.cmd` instead of `npm` if PowerShell blocks npm.ps1. An npm DNS/network error requires a working connection to the npm registry before installation can succeed.
 
-**If PowerShell blocks npm.ps1:** open a Command Prompt terminal in VS Code, or run `npm.cmd install` and `npm.cmd run dev`.
+## Update the existing Vercel project
 
-**If npm reports ECONNRESET/EAI_AGAIN:** check your internet/proxy/DNS and retry `npm install`. Dependencies are fetched from npm the first time.
-
-## 2. Website pages / د پروژې پاڼې
-
-- Home — Header, navbar, hero, editorial cards, book grid, featured categories, footer.
-- Catalog — live 32-books-per-page pagination, search, topic filter, language filter, page-local A–Z option.
-- Categories — 30 browsable categories (some niche categories may have few matching public-domain titles).
-- Book details — real titles/authors/subjects, original-source cover images and external reading/download links. For Pashto titles, reader access and downloading depend on the original publisher.
-- Reading guide — official archive navigation, not an in-app full-text reader.
-- Favorites — stores real book objects in this browser's localStorage.
-- Curated Collections — six handpicked categories.
-- Dashboard — live API count when online; charts based on a clearly labelled **current sample**; saved and recent book metrics.
-- Pashto Library — 53 real titles including 23 novels/stories, six categories, filter, search and 12 cards per page.
-- About — developer portrait, full-stack web developer biography, frontend/backend/database skill groups and selected academic projects.
-- Contact — WhatsApp, email, phone, LinkedIn and a mailto-based form.
-- Help, Privacy, custom 404 page.
-
-Includes responsive mobile navigation, search modal, dark/light mode and skeleton loaders. The English classic fallback now uses **remote Project Gutenberg cover links** — no invented cover art.
-
-## 3. Real Pashto book references and cover use
-
-- The locally curated book metadata lives in `src/data/pashtoCatalog.json`; 53 entries from Ketabton, Aksos Book Store, Hasa Book Store and Apple Books, with direct URLs to each source page.
-- Cover images are loaded directly from the original sources, **not included as copied copyrighted files**. Browsers need internet access and the source server must allow image requests. If a source image is unavailable, the site displays the book title, **not a fabricated cover**.
-- Visit `/#/pashto` for the special Pashto shelf, and click any book card to see its local `/#/books/ps-...` detail page.
-- The `Read` and `Download options` buttons lead to the source page; they are **not a promise that the publisher offers a free downloadable PDF**. Some websites require accounts or restrict access.
-- See `VERIFIED_BOOK_SOURCES.md` for the complete, editable 53-title source list.
-
-## 4. APIs and licensing
-
-- Gutendex API: https://gutendex.com/ (no key required)
-- Project Gutenberg linking policy: https://www.gutenberg.org/policy/linking.html
-- Gutenberg terms: https://www.gutenberg.org/policy/terms_of_use.html
-
-**Important:** Book metadata comes from Gutendex. The main catalog filters for titles marked public domain **in the U.S.** Copyright rules can differ by country. The app does **not** deep-link ebook files or host copyrighted books; the **Read at source** and **Download options** buttons open the book's official Project Gutenberg catalog page, where the reader chooses an available format. Project Gutenberg asks websites not to hotlink individual book files. The app does not sell books or promise a copyrighted modern bestseller catalog.
-
-If the API is unavailable, the app displays **16 genuine English classic title entries** with remotely hosted Project Gutenberg covers and a visible offline/demo notice. They may not render when the internet is unavailable. Live totals/charts are not fabricated.
-
-## 5. GitHub Pages deployment (وړیا Hosting)
-
-No extra router configuration is required: this project uses `HashRouter` and `base: './'` so links work on GitHub Pages project URLs.
-
-1. Visit https://github.com/new and create a public repository, e.g. `emerald-library`. **Do not** add a GitHub README, since this project already includes one.
-2. From inside the unzipped project in VS Code Terminal:
+1. Back up your existing source and keep its `.git` folder. Copy the source files from this archive into the existing repository. Remove files present in your old tree but absent in this archive (especially the former credential components, data and images). Preserve any existing Google verification file or verification meta tag and local configuration. Do not copy `node_modules` or `dist` into Git.
+2. Test with the commands above. If using GitHub integration, commit and push to the branch linked to the same Vercel project:
 
 ```powershell
-git init
-git add .
-git commit -m "Build Emerald Digital Library"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/emerald-library.git
-git push -u origin main
+git add -A
+git commit -m "Rebrand as Darman Digital Library and improve SEO"
+git push origin main
 ```
 
-3. Go to **Repository → Settings → Pages → Build and deployment → Source → GitHub Actions**.
-4. The included `.github/workflows/deploy.yml` automatically builds and deploys the site on pushes to `main`.
-5. After the GitHub Actions run succeeds, open:
+If using Vercel CLI, run `vercel --prod` in the existing linked project. Verify the target is your existing project, not a new one. Vercel settings: Vite, build `npm run build`, output `dist`. Do not change the production domain. `vercel.json` enables direct React route navigation and refresh. Old `/#/catalog` style bookmarks are converted to regular paths on Vercel.
 
-```
-https://YOUR_USERNAME.github.io/emerald-library/
-```
+3. Test the live homepage, `/catalog`, `/pashto`, `/about`, `/dashboard`, `/robots.txt` and `/sitemap.xml`. Check mobile navigation and reload a deep route. In Google Search Console, submit `sitemap.xml` for the existing URL-prefix property, then inspect the home page and request indexing once after the deployment (if quota permits).
 
-A catalog URL looks like `https://YOUR_USERNAME.github.io/emerald-library/#/catalog`.
+## SEO
 
-If you change the repository name, the relative Vite base still works — no hardcoded username or repository name is built in.
+- Static homepage title, description, Open Graph/Twitter data, requested keyword metadata and WebSite JSON-LD; responsive site branding; crawlable BrowserRouter URLs on Vercel; route-specific rendered titles, descriptions, canonicals and robots tags in `src/lib/seo.js`.
+- `public/sitemap.xml` includes the main public pages, category URLs and curated Pashto book details; personal favorites/dashboard and reader guide are intentionally excluded. Google ignores the meta keywords tag for ranking. Descriptive titles and visible content are more important.
+- Search engines decide when to recrawl and how to display or rank results. A client-rendered SPA does not provide the same per-route server-rendered HTML as SSR/SSG. Social crawlers may show the homepage card on shared internal routes.
+- To change domains later, update the origin in `index.html`, `src/lib/seo.js`, `public/robots.txt`, and `public/sitemap.xml`, set a permanent redirect from the old domain, and configure Search Console for the new domain.
 
-## 6. Update developer/contact information (شخصي معلومات)
+## Book sources and application limits
 
-Edit **`src/components/Footer.jsx`**. The `CONTACT` object includes:
+Gutendex returns titles identified as public domain in its source catalog, primarily under U.S. law. Rights may differ by country. The site links to original Gutenberg book pages instead of redistributing files. The Pashto catalog contains 53 curated bibliographic records, including 23 novels/stories, from the original publishers and libraries. Availability, access requirements and download permissions depend on the source. Covers load remotely and may fail; the UI has a labeled fallback. See `VERIFIED_BOOK_SOURCES.md` and `src/data/pashtoCatalog.json` for source records. No book source URLs were renamed as part of the rebrand.
 
-```js
-export const CONTACT = {
-  whatsapp: 'https://wa.me/93731597286',
-  email: 'atefullahdarman@gmail.com',
-  phone: '0786354525',
-  linkedin: 'https://www.linkedin.com/in/atefullah-zafar-zoy-2a7019399'
-};
-```
+Favorites, recent books, theme and reading goal are stored locally in the browser. Old localStorage keys are supported during migration so the rebrand can preserve existing preferences on the same origin. Dashboard statistics use actual API data or clearly labeled sample data. No server authentication, file hosting, database or cross-device sync is included. Contact uses mailto and external links; the developer portrait and previously supplied public contact information remain in the project.
 
-GitHub: `https://github.com/dashboard` is **not a public profile URL**, so it was deliberately **not added** as a public social link. Add the real public profile URL when you have it, e.g. `https://github.com/YOUR_USERNAME`.
+## Alternative GitHub Pages deployment
 
-Developer portrait: `public/images/developer.webp`, supplied by the user. About biography: `src/pages/About.jsx`.
+The retained GitHub Actions workflow sets `VITE_ROUTER=hash` and uses a relative Vite base for GitHub Pages. For search discoverability, Vercel is the primary deployment; the sitemap and canonical origin intentionally refer to the Vercel URL. If moving to a different production host, adjust SEO settings to match it. Do not submit hash-fragment URLs to Google as independent sitemap pages.
 
-**Privacy reminder:** the phone, WhatsApp, email and portrait are publicly visible to anyone who opens a deployed site. Remove any detail you do not want public before publishing.
+## Validation
 
-## 6. Project structure
-
-```
-Emerald_Digital_Library/
-├── .github/workflows/deploy.yml     GitHub Pages deployment
-├── index.html
-├── package.json
-├── vite.config.js                    Relative base for Pages
-├── public/
-│   ├── favicon.svg
-│   ├── images/developer.webp
-│   └── covers/                       16 original fallback covers
-├── src/
-│   ├── main.jsx
-│   ├── App.jsx
-│   ├── styles.css
-│   ├── components/                    Header, Footer, BookCard, etc.
-│   ├── context/LibraryContext.jsx    Favorites, theme, recent, home API state
-│   ├── data/categories.js           30 category definitions
-│   ├── data/demoBooks.js            Clearly-labelled fallback sample titles
-│   ├── lib/books.js                 API fetch & helpers
-│   └── pages/                       11+ routes
-└── scripts/check-project.mjs
-```
-
-## 7. Preview files
-
-`DESIGN_PREVIEW.html` is a **non-interactive static layout sample** for looking at the homepage visual styling without installing Node.js. The actual working site is the React application started via `npm run dev`. Desktop and mobile screenshots of the static layout are in `previews/`.
-
-## 8. Notes and limits
-
-- This is a **frontend-only** project, not a backend system: no real user accounts, password authentication, admin CRUD, cloud sync or owned ebook file hosting.
-- If favorites are saved on Laptop A, they do not sync to Phone B.
-- Most book covers are loaded from the third-party API in live mode. A network connection is needed for new titles, metadata and remote covers.
-- The contact form composes a mailto: email; it does not send messages itself.
-- The dashboard's topic chart counts matches *within the fetched sample*, not the global archive; one book may match multiple topics.
-- The UI is authored in English to match the reference; the accompanying guide contains Pashto instructions.
-- If you want backend authentication, admin accounts or upload features later, connect a real backend such as Laravel/Express plus database and file hosting.
-
-## Cover authenticity and availability
-This project requests book cover images from Open Library (known ISBNs/metadata), Project Gutenberg, and the original Pashto-source catalog pages. It does NOT package fabricated edition art and does not rehost third-party cover files. Availability depends on the reader’s connection and publishers’ servers. On failure it displays a labelled fallback, never a random cover.
+`npm run check` validates the project structure, relative imports, metadata, public sitemap and removed asset paths. A clean npm install and build is still needed before deployment.
